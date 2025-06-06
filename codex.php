@@ -1,9 +1,9 @@
 <?php
-include("essentiel.php");  
+include("essentiel.php");
 include("nav.php");
 
 function e($str) {
-    return htmlspecialchars($str);
+    return htmlspecialchars($str, ENT_QUOTES);
 }
 
 try {
@@ -17,9 +17,11 @@ try {
         FROM codex AS c
         JOIN elements AS e
           ON c.element_id = e.id
+        LEFT JOIN user_elements AS ue
+          ON ue.element_id = c.element_id
         LEFT JOIN users AS u
-          ON FIND_IN_SET(e.id, u.specialisation)
-        GROUP BY c.id
+          ON u.id = ue.user_id
+        GROUP BY c.id, c.nom, c.image, e.type
         ORDER BY c.id DESC
     ";
 
@@ -52,7 +54,9 @@ try {
     <?php if (empty($allSorts)): ?>
       <p>Aucun sort enregistré pour l’instant.</p>
       <?php if (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 2): ?>
-        <p><a href="ajoutcodex.php" class="btn-magique">Ajouter un premier sort</a></p>
+        <p>
+          <a href="ajoutcodex.php" class="btn-magique">Ajouter un premier sort</a>
+        </p>
       <?php endif; ?>
     <?php else: ?>
       <ul class="liste-codex">
@@ -73,7 +77,7 @@ try {
             <?php endif; ?>
 
             <p>
-              Utilisateurs possédant l’élément « <?= e($sort['element_type']) ?> » :
+              <strong>Utilisateurs possédant l’élément « <?= e($sort['element_type']) ?> » :</strong><br>
               <?php
                 if (empty($sort['users_with_element'])) {
                   echo "<em>Aucun utilisateur</em>";
