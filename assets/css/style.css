@@ -531,7 +531,6 @@ button:active,
   padding-bottom: 1rem;
 }
 .page-ajout-monstre .liste-bestiaires .item-bestiaire h4 {
-  font-family: "Cinzel", serif;
   color: #d9b3ff;
   margin: 0;
   font-size: 1.4rem;
@@ -543,20 +542,19 @@ button:active,
   margin: 0.5rem 0;
   line-height: 1.4;
   color: #f0e6f6;
-  font-family: "Cinzel", serif;
 }
 .page-ajout-monstre .liste-bestiaires .item-bestiaire .image-container {
   margin-top: 0.5rem;
 }
 .page-ajout-monstre .liste-bestiaires .item-bestiaire .image-container img {
-  max-width: 200px;
+  width: 100%;
   border: 1px solid #a366ff;
   border-radius: 0.4rem;
   box-shadow: 0 0 10px rgba(187, 136, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.2) inset;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .page-ajout-monstre .liste-bestiaires .item-bestiaire .image-container img:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(187, 136, 255, 0.8);
 }
 .page-ajout-monstre .liste-bestiaires .item-bestiaire p.createur {
@@ -589,7 +587,7 @@ button:active,
     font-size: 1.2rem;
   }
   .page-ajout-monstre .liste-bestiaires .item-bestiaire .image-container img {
-    max-width: 100%;
+    width: 100%;
   }
   .page-ajout-monstre .liste-bestiaires .item-bestiaire p.description {
     font-size: 0.9rem;
@@ -1426,6 +1424,152 @@ button:active,
   .btn--delete {
     font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
+  }
+}
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Roboto_Condensed-Regular.ttf");
+}
+@font-face {
+  font-family: "magic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Beleren2016-Bold.ttf");
+}
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Roboto_Condensed-Regular.ttf");
+}
+@font-face {
+  font-family: "magic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Beleren2016-Bold.ttf");
+}
+button,
+.btn-magique {
+  background: linear-gradient(135deg, #4b004b, #220022);
+  border: 2px solid #a366ff;
+  padding: 0.5rem 1rem;
+  font-family: "magic";
+  font-weight: 700;
+  color: #f0e6f6;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+button:hover,
+.btn-magique:hover {
+  background: linear-gradient(135deg, #5c005c, #330033);
+  box-shadow: 0 0 10px rgba(187, 136, 255, 0.7), 0 0 20px rgba(187, 136, 255, 0.7);
+  transform: translateY(-2px);
+}
+button:active,
+.btn-magique:active {
+  transform: translateY(0);
+  box-shadow: 0 0 5px rgba(187, 136, 255, 0.7);
+}
+
+.page-codex {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: rgba(50, 0, 50, 0.5);
+  border: 1px solid #9933cc;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 12px rgba(187, 136, 255, 0.5), inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.page-codex h3 {
+  color: #d9b3ff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 5px rgba(187, 136, 255, 0.6), 0 0 10px rgba(187, 136, 255, 0.6);
+}
+.page-codex .btn-magique {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.page-codex .liste-codex {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.page-codex .liste-codex li {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
+}
+.page-codex .liste-codex li h4 {
+  margin: 0;
+  color: #d9b3ff;
+  font-size: 1.4rem;
+}
+.page-codex .liste-codex li h4 small {
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+.page-codex .liste-codex li .image-sort {
+  margin-top: 0.5rem;
+}
+.page-codex .liste-codex li .image-sort img {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+  border: 1px solid #a366ff;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 10px rgba(187, 136, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.2) inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.page-codex .liste-codex li .image-sort img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(187, 136, 255, 0.8);
+}
+.page-codex .liste-codex li p {
+  margin-top: 0.5rem;
+  color: #f0e6f6;
+  line-height: 1.4;
+}
+.page-codex .liste-codex li .btn-modifier {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+}
+
+@media (max-width: 600px) {
+  .page-codex {
+    padding: 1rem;
+  }
+  .page-codex h3 {
+    font-size: 1.8rem;
+  }
+  .page-codex .liste-codex li {
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .page-codex .liste-codex li h4 {
+    font-size: 1.2rem;
+  }
+  .page-codex .liste-codex li .image-sort img {
+    max-width: 100%;
+  }
+  .page-codex .liste-codex li p {
+    font-size: 0.9rem;
+  }
+  .page-codex .liste-codex li .btn-modifier {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .page-codex .btn-magique {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-align: center;
   }
 }
 

@@ -40,11 +40,11 @@ try {
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <div class="page-ajout-monstre">
+  <div class="page-codex">
     <h3>Codex des Sorts</h3>
 
     <?php if (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 2): ?>
-      <div style="margin-bottom: 1rem;">
+      <div class="action-add">
         <a href="ajoutcodex.php" class="btn-magique">Ajouter un nouveau sort</a>
       </div>
     <?php endif; ?>
@@ -55,22 +55,19 @@ try {
         <p><a href="ajoutcodex.php" class="btn-magique">Ajouter un premier sort</a></p>
       <?php endif; ?>
     <?php else: ?>
-      <ul style="list-style: none; padding: 0;">
+      <ul class="liste-codex">
         <?php foreach ($allSorts as $sort): ?>
-          <li style="margin-bottom: 2rem; border-bottom: 1px solid #ccc; padding-bottom: 1rem;">
-            <h4 style="margin: 0;">
+          <li class="item-codex">
+            <h4>
               <?= e($sort['nom_sort']) ?>
-              <small style="font-size: 0.85rem; color: #aaa;">
-                (Élément : <?= e($sort['element_type']) ?>)
-              </small>
+              <small>(Élément : <?= e($sort['element_type']) ?>)</small>
             </h4>
 
             <?php if (!empty($sort['image_sort'])): ?>
-              <div style="margin-top: 0.5rem;">
+              <div class="image-sort">
                 <img
                   src="assets/img/<?= e($sort['image_sort']) ?>"
                   alt="Image du sort <?= e($sort['nom_sort']) ?>"
-                  style="max-width: 200px; border: 1px solid #666; border-radius: 0.4rem;"
                 >
               </div>
             <?php endif; ?>
@@ -87,7 +84,7 @@ try {
             </p>
 
             <?php if (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 2): ?>
-              <p style="margin-top: 0.5rem;">
+              <p class="action-modifier">
                 <a href="modifierCodex.php?id=<?= (int)$sort['codex_id'] ?>" class="btn-magique">Modifier</a>
               </p>
             <?php endif; ?>
@@ -97,7 +94,7 @@ try {
     <?php endif; ?>
 
     <?php if (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 2): ?>
-      <div style="margin-top: 2rem;">
+      <div class="action-add">
         <a href="ajoutcodex.php" class="btn-magique">Ajouter un nouveau sort</a>
       </div>
     <?php endif; ?>
