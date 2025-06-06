@@ -35,26 +35,26 @@ include("nav.php");
         <div class="feature-card__content">
           <h2>Bestiaire</h2>
           <p>Explorez notre collection de créatures mystérieuses. Connectez-vous pour ajouter vos propres découvertes.</p>
-          <a href="bestiaire.php" class="btn-feature">Accéder au Bestiaire</a>
+          <a href="bestiaire.php" class="btn-magique">Accéder au Bestiaire</a>
         </div>
       </div>
 
       <div class="feature-card">
-        <img src="assets\img\hero.png" alt="Illustration Codex">
+        <img src="assets\img\codex.png" alt="Illustration Codex">
         <div class="feature-card__content">
           <h2>Codex de Sorts</h2>
           <p>Découvrez et enrichissez le recueil des sorts élémentaires. Les initiés peuvent ajouter ou modifier des entrées.</p>
-          <a href="codex.php" class="btn-feature">Accéder au Codex</a>
+          <a href="codex.php" class="btn-magique">Accéder au Codex</a>
         </div>
       </div>
 
       <?php if (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 2): ?>
         <div class="feature-card">
-          <img src="assets\img\hero.png" alt="Illustration Panneau Admin">
+          <img src="assets\img\admin.png" alt="Illustration Panneau Admin">
           <div class="feature-card__content">
             <h2>Panneau Admin</h2>
             <p>Gérez les utilisateurs, validez les spécialisations et maintenez l’ordre dans l’Académie.</p>
-            <a href="panneau_admin.php" class="btn-feature">Accéder au Panneau</a>
+            <a href="panneau_admin.php" class="btn-magique">Accéder au Panneau</a>
           </div>
         </div>
       <?php endif; ?>

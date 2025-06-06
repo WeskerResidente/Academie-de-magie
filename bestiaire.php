@@ -68,7 +68,7 @@ try {
           if (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 2 || (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $monstre['created_id'])):
           ?>
             <p>
-              <a href="modifierMonstre.php?id=<?= (int)$monstre['id'] ?>" class="btn-magique">
+              <a href="modifiermonstre.php?id=<?= $monstre['id'] ?>" class="btn-magique">
                 Modifier
               </a>
             </p>
